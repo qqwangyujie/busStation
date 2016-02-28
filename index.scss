@@ -1,0 +1,198 @@
+
+@import "mixin","reset";
+$bgColor:#f5f5f5;
+
+.html,.body{
+  background: #e7e7e7;
+}
+.container{
+  margin: 0px auto 0 auto;
+  width: 1200px;
+  height: 562px;
+}
+
+.header-wrapper{
+  @include steWra(100px);
+  .head{
+    border: 1px solid #f5f5f5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 60px;
+    border-top-right-radius: 200px;
+    border-top-left-radius: 200px;
+  }
+
+}
+.body-wrapper{
+  background: $bgColor;
+  border: 1px solid $bgColor;
+  @include steWra(400px);
+  .bus-info{
+    @include steWra(40px);
+  }
+  .station-wrapper{
+    @include steWra(360px/3);
+    .bus{
+      padding: 0 40px;
+      @include steWra(30px);
+      @include vetically(30px);
+      @include box-sizing();
+      span{
+        float: left;
+        width: 40px;
+        background:#FE0F45 ;
+        font-weight: 700;
+        font-size: 14px;
+        display: block;
+        color: #fff;
+        box-shadow: 2px 2px 2px #888;
+        @include vetically(25px)
+      }
+      .txt{
+        color: #FE0F45;
+        margin-left:60px;
+        font-size: 14px;
+        float: left;
+        @include vetically(25px);
+      }
+      .time{
+        width: 150px;
+        @include vetically(25px);
+        float: left;
+        p{
+          text-align: right;
+          @include vetically(12px);
+          font-size: 12px;
+        }
+      }
+
+    }
+    .station{
+      @include steWra(60px);
+      ul{
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0 10px;
+        width: 80%;
+        height: 60px;
+        border-radius: 5px;
+        background: #07683F;
+        @include vetically(60px,20px);
+        @include box-sizing();
+
+        li{
+          color: #fff;
+          font-size: 12px;
+          margin:0 5px;
+          width: 20px;
+          height: 100%;
+          float: left;
+        }
+        .this{
+          border: 1px solid #e7e7e7;
+          color: #ffef87;
+          font-weight: 700;
+          &:before{
+            content: '';
+            position: absolute;
+            border: 3px solid #f5f5f5;
+            width: 0;
+            height: 0;
+            top:0px;
+            left: 165px;
+            border-bottom-color:transparent ;
+            border-right-color:transparent;
+          }
+          &:after{
+            content: '';
+            position: absolute;
+            border: 3px solid #f5f5f5;
+            width: 0;
+            height: 0;
+            bottom: 0px;
+            left: 181px;
+            border-top-color:transparent ;
+            border-left-color:transparent;
+          }
+        }
+      }
+    }
+    .direction{
+      @include steWra(10px);
+      %direction{
+        z-index: 1;
+        position: absolute;
+      }
+      .direction1{
+
+        width: 0;
+        height: 0;
+        right: 20px;
+        top: 0;
+        border: 5px solid #e74c3c;
+        border-right-color:transparent ;
+        border-top-color:transparent ;
+        @extend %direction
+      }
+      .direction3{
+
+        border-radius:5px ;
+        top: 5px;
+        right: 25px;
+        width: 350px;
+        height: 5px;
+        background: #e74c3c;
+        @extend %direction
+      }
+    }
+    .text{
+      font-weight: 700;
+      font-size: 9px;
+      z-index: 99;
+      width: 60px;
+      position: absolute;
+      bottom: 17px;
+      left: 170px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      @include vetically(12px)
+    }
+  }
+}
+.footer-wrapper{
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+  border-bottom-right-radius: 200px;
+  border-bottom-left-radius: 200px;
+  @include steWra(60px);
+}
+.line{
+  border: 2px solid #f5f5f5;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  @include steWra(350px,10px);
+  background: #f5f5f5;
+  &:before{
+    top: -3px;
+    content: '';
+    position: absolute;
+    border: 10px solid #f5f5f5;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    left: -22px;
+
+  }
+  &:after{
+    top: -3px;
+    content: '';
+    position: absolute;
+    border: 10px solid #f5f5f5;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    left: 12px;
+  }
+}
+
